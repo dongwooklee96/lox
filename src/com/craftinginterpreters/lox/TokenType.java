@@ -1,3 +1,5 @@
+package com.craftinginterpreters.lox;
+
 enum TokenType {
     // 단일 문자 토큰
     LEFT_PAREN, RIGHT_PAREN, LEFT_BRACE, RIGHT_BRACE,
