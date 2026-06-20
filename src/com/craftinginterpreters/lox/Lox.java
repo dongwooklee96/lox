@@ -51,14 +51,12 @@ public class Lox {
         List<Token> tokens = scanner.scanTokens();
 
         Parser parser = new Parser(tokens);
-        Expr expression = parser.parse();
+        List<Stmt> statements = parser.parse();
 
         // 구문 에러 발생 시 멈춘다.
         if (hadError) return;
 
-        interpreter.interpret(expression);
-
-        System.out.println(new AstPrinter().print(expression));
+        interpreter.interpret(statements);
     }
 
     static void error (int line, String message) {
