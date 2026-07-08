@@ -248,7 +248,7 @@ public class Interpreter implements Expr.Visitor<Object>,
                 execute(statement);
             }
         } finally {
-          this.environment = environment;
+          this.environment = previous;
         }
     }
 
